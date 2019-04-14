@@ -94,3 +94,33 @@ add(((0 + x1) + x2) + x3), x4)
 Reduce is somtimes called "fold" because we "fold" the function `fn` over the list.
 
 See: https://en.wikipedia.org/wiki/Fold_(higher-order_function)
+
+#### Reduce With Other Operations
+
+Let's look at why `map` can be written as:
+
+```javascript
+const map = (fn, list) => reduce((acc, item) => acc.concat(fn(item), [])
+```
+
+Expanding this out, we get:
+
+```javascript
+    map(fn, [x1, x2, x3])
+=== [].concat(fn(x1).concat(fn(x2)).concat(fn(x3))
+=== [fn(x1), fn(x2, fn(x3))]
+```
+
+Or `all` / `every`:
+
+```javascript
+const all = (fn, list) => reduce((acc, item) => fn(item) ? true : false, true);
+```
+
+Expanding this out we get:
+
+```javascript
+    all(isEven, [x1, x2, x3])
+=== (((true && isEven(x1)) && isEven(x2)) && isEven(x3))
+=== true && isEven(x1) && isEven(x2) && isEven(x3)
+```
