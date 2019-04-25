@@ -58,7 +58,7 @@ A word `S` is an anagram of another word `T` if you can spell `S` by rearranging
 Write a function `isAnagram` that takes two words as input and returns `true` if they're anagrams (and `false` otherwise).
 
 ```javascript
-function isPalindrome(word1, word2) {
+function isAnagram(word1, word2) {
 
 }
 ```
