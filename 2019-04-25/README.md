@@ -6,21 +6,35 @@ April 25, 2019
 
 1. Know the worst-case run time of common operations on common data structures (Big-O)
 1. Know how to express your plan quickly in English
-1. Start with the brute-force solution (if it's obvious)
+1. Start with the brute-force solution (if it's obvious and not obviously terrible)
 1. Develop a set of questions you can ask yourself to help you see the problem from another angle.
 1. As non-native English speakers, know some common English words that come up in interviews, e.g., palindrome and anagram.
 1. Identify a set of common techniques and a sense for when a problem calls for those techniques.
 1. Practice!
 
+## Resources
+
+- https://teachyourselfcs.com/
+- http://www.crackingthecodinginterview.com/ (if you just want to get good at interview questions)
+- https://leetcode.com (for a bunch of interview-style questions)
+- http://www.algorist.com/ (if you want to really learn algorithms / data structures)
+
 ### Questions to Ask
 
 - Can I transform the input in a way that would make the problem easier?  For example...
-  - Would the problem be easier if the data were sorted?
-- Can I use a map/hash to avoid recomputing intermediate results?
+  - Would the problem be easier if the data were sorted? (Worst case for sort is O(n log n))
+- Can I use a map/hash to avoid recomputing intermediate results or storing things like counts, have I seen this before, etc.?
+  - Typically, inserting, fetching, and deleting from a map are O(1)
 - Is there something special about the data and can I take advantage of it? For example...
   - Is the data sorted?
   - Does the data consist of integers?
   - Does the data have a maximum size?
+
+For example, given an 16-bit integer `n`, count how many bits in its binary representation are set to `1`.
+
+Because we know the integers will never be larger than 16-bits, we can make an array containing one number per 16-bit integer.  The value at index `i` is the numbers of 1's in the binary representation of `i`.  We can generate this array once and define it statically in our program.
+
+This is only 131 KB in memory.  We could now do a lookup for a 32-bit integer by using the above table to check the first 16-bits, shifting it over 16 bits, and then checking the second 16 bits.
 
 ## Questions
 
