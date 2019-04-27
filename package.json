@@ -1,0 +1,29 @@
+{
+  "name": "sessions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "matrix": "^1.0.3",
+    "microtime": "^3.0.0"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfarmer/proxi-sessions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfarmer/proxi-sessions/issues"
+  },
+  "homepage": "https://github.com/jfarmer/proxi-sessions#readme"
+}
