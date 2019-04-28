@@ -152,3 +152,29 @@ g(x) = x
 
 f(x)/g(x) = log(x)/x <= 2 for all x >= 1
 ```
+
+Try it for any pairs of functions you might want.  This definition also works for functions that do constant work for infinitely many inputs and non-constant input for infinitely many inputs.
+
+For example, let's say we wanted to find the largest power of `k` that divided a number `n`.
+
+```javascript
+function largestPower(base, number) {
+  let power = 0;
+  let div = number;
+
+  while(div % base === 0) {
+    power++;
+    div = Math.floor(div / base);
+  }
+
+  return power;
+}
+```
+
+So `largestPower(2, n)` is the largest power of `2` that divides `n`.  Is `base` doesn't divide `n` then the function will return in constant time.  There are infinitely many values of `base` and `n` that satisfy this.  For example `base**k + 1` is never divisible by `base` for any positive integer `k` (because `base**k % base === 0`, so `(base**k + 1) % base === 1`).
+
+When `n` is evenly divisible by a power of `2` then `largestPower(2, n)` will run as many times as `2` divides `n`.  This function's running time is all over the place in terms of its inputs.
+
+For example, we know that that if `n = 2**k` for some `k` then `largerPower(2, n)` will take `k` steps.  We also know that `largestPower(2, 3**k)` will return after a single mod operation.
+
+That means `largestPower(2, n)` is has running time of `O(log n)`.  There's always a larger input `n` that will take `log n` steps, so its running time eventually bounded above by a constant multiple of `log(n)` and we can't do any better than that using this algorithm.
