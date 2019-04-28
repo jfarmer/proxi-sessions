@@ -1,6 +1,7 @@
 // Time: O(n)   -- O(n^2)
 // Space: O(1)  -- O(2^n)
-// n -> 2n   n^2 -> (2n)^2 -> 4(n^2)
+// Answer: Time O(2^n) memory O(n)
+// Memory is not O(2^n) because we never recurse more than n levels
 function fibRecursive(n, level = 0) {
   if (n === 0) return 0;
   if (n === 1) return 1;
