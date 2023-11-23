@@ -52,7 +52,7 @@ function L(array, i, memo = []) {
     return memo[i];
   }
 
-  if (i === 0) return 0;
+  if (i === 0) return 1;
   if (i === 1) return 1;
 
 
